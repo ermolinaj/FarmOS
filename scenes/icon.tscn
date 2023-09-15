@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8n10kf3gp0fe"]
+
+[ext_resource type="Texture2D" uid="uid://wk8gs6blsp12" path="res://assets/TinyRanch_Crops.png" id="1_owy57"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5tkv2"]
+line_spacing = 1.0
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yws5g"]
+size = Vector2(32, 45.4375)
+
+[node name="Icon" type="Node2D"]
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(20, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("1_owy57")
+hframes = 7
+vframes = 15
+frame = 28
+
+[node name="Text" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 32.0
+offset_right = 36.0
+offset_bottom = 45.0
+pivot_offset = Vector2(16, -9)
+text = "test.veg"
+label_settings = SubResource("LabelSettings_5tkv2")
+metadata/_edit_use_anchors_ = true
+
+[node name="SelectionArea" type="Area2D" parent="."]
+position = Vector2(16, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SelectionArea"]
+position = Vector2(4, 1.28125)
+shape = SubResource("RectangleShape2D_yws5g")

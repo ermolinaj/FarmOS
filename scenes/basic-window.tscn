@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgxpkreaifljd"]
+
+[ext_resource type="Script" path="res://scripts/basic-window.gd" id="1_g81yx"]
+[ext_resource type="PackedScene" uid="uid://b8n10kf3gp0fe" path="res://scenes/icon.tscn" id="2_0mjbu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xse8k"]
+
+[node name="BasicWindow" type="ColorRect"]
+offset_right = 640.0
+offset_bottom = 480.0
+script = ExtResource("1_g81yx")
+
+[node name="Tab" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 25.0
+color = Color(0.0313726, 0.0941176, 1, 1)
+
+[node name="WindowNameLabel" type="Label" parent="Tab"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "WINDOW NAME"
+label_settings = SubResource("LabelSettings_xse8k")
+
+[node name="CloseSymbol" type="Label" parent="Tab"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -15.0
+offset_right = -4.0
+offset_bottom = 26.0
+grow_horizontal = 0
+text = "X"
+
+[node name="Icon" parent="." instance=ExtResource("2_0mjbu")]
+position = Vector2(0, 25)
+
+[node name="Icon2" parent="." instance=ExtResource("2_0mjbu")]
+position = Vector2(36, 25)

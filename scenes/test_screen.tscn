@@ -1,17 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://cske73tridhoo"]
 
-[ext_resource type="Texture2D" uid="uid://btb7kh7m76bx3" path="res://assets/Windows_3.11_workspace.png" id="1_fovjx"]
 [ext_resource type="Texture2D" uid="uid://wk8gs6blsp12" path="res://assets/TinyRanch_Crops.png" id="2_jyr8l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xse8k"]
 
-[node name="TestScreen" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_5mvrb"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
 
-[node name="Windows3_11Workspace" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(21, 226)
-scale = Vector2(2.13, 2.125)
-texture = ExtResource("1_fovjx")
+[node name="TestScreen" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -20,6 +17,7 @@ offset_right = 520.0
 offset_bottom = 340.0
 
 [node name="Tab" type="ColorRect" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
 offset_right = 520.0
 offset_bottom = 25.0
 color = Color(0.0313726, 0.0941176, 1, 1)
@@ -51,10 +49,23 @@ offset_bottom = 26.0
 grow_horizontal = 0
 text = "X"
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ColorRect"]
-position = Vector2(8, 33)
+[node name="Node2D" type="Node2D" parent="CanvasLayer/ColorRect"]
+position = Vector2(16, 32)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ColorRect/Node2D"]
 scale = Vector2(4, 4)
 texture = ExtResource("2_jyr8l")
 offset = Vector2(4, 4)
 region_enabled = true
 region_rect = Rect2(0, 16, 8, 8)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect/Node2D"]
+offset_top = 31.0
+offset_right = 50.0
+offset_bottom = 54.0
+text = "eggplant.veg
+"
+label_settings = SubResource("LabelSettings_5mvrb")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(26, 48)
